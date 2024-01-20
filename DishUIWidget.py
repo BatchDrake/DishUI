@@ -192,7 +192,6 @@ class DishUIWidget(QtWidgets.QWidget):
             if state:
                 self.send_init_commands()
             else:
-                self.send_cleanup_commands()
                 self.lastErrorLabel.setText('No errors')
 
     # Slots
@@ -203,10 +202,12 @@ class DishUIWidget(QtWidgets.QWidget):
         self.update_ui_state()
 
     def on_disconnect(self):
-        self._inconsistent = True
-        self.uiStatusLabel.setText('Disconnecting...')
-        self.disconnect.emit()
-        self.update_ui_state()
+        if self._connected:
+            self._inconsistent = True
+            self.send_cleanup_commands()
+            self.uiStatusLabel.setText('Disconnecting...')
+            self.disconnect.emit()
+            self.update_ui_state()
 
     def on_abort(self):
         self.command('ABORT')

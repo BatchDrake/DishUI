@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>782</width>
-    <height>450</height>
+    <height>459</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -108,8 +108,9 @@
        <widget class="QLabel" name="azLabel">
         <property name="font">
          <font>
-          <family>Barlow Black</family>
+          <family>Cascadia Mono PL</family>
           <pointsize>70</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -132,8 +133,9 @@ color: white;
        <widget class="QLabel" name="elLabel">
         <property name="font">
          <font>
-          <family>Barlow Black</family>
+          <family>Cascadia Mono PL</family>
           <pointsize>70</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -433,7 +435,7 @@ color: white;
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>stop.svg</normaloff>Stop_hand-octogon-red.svg</iconset>
+          <normaloff>stop.svg</normaloff>stop.svg</iconset>
         </property>
         <property name="iconSize">
          <size>

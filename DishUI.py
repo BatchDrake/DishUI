@@ -59,7 +59,9 @@ class DishUI(QObject):
 
     def run(self):
         self.window.show()
-        return self.app.exec()
+        val = self.app.exec()
+        if self.serialWorker.is_connected():
+            self.serialWorker.write('REPORT OFF')
     
     # Slots
     def on_serial_disconnected(self, reason: str):
